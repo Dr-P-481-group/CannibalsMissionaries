@@ -9,33 +9,33 @@ class MissCannibals(Problem):
         
     def actions(self, state):
         M, C, boat = state
-        possible_actions = []
+        possibleActions = []
         if boat:  #boat is on the starting side
             if M >= 2:
-                possible_actions.append('MM')
+                possibleActions.append('MM')
             if C >= 2:
-                possible_actions.append('CC')
+                possibleActions.append('CC')
             if C >= 1:
-                possible_actions.append('C')
+                possibleActions.append('C')
             if M >= 1:
-                possible_actions.append('M')
+                possibleActions.append('M')
             
             if M >= 1 and C >= 1:
-                possible_actions.append('MC')
+                possibleActions.append('MC')
         else:  #boat is on the other side
             if self.M - M >= 2:
-                possible_actions.append('MM')
+                possibleActions.append('MM')
             if self.C - C >= 2:
-                possible_actions.append('CC')
+                possibleActions.append('CC')
             if self.C - C >= 1:
-                possible_actions.append('C')
+                possibleActions.append('C')
             if self.M - M >= 1:
-                possible_actions.append('M')
+                possibleActions.append('M')
             if self.M - M >= 1 and self.C - C >= 1:
-                possible_actions.append('MC')
+                possibleActions.append('MC')
 
     
-        return possible_actions
+        return possibleActions
 
     
 
