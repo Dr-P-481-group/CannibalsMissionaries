@@ -33,14 +33,30 @@ class MissCannibals(Problem):
                 possibleActions.append('M')
             if self.M - M >= 1 and self.C - C >= 1:
                 possibleActions.append('MC')
-
-    
+                   
+                      
         return possibleActions
-
-    
-
-
-	
+                                
+    def result(self, state, action):
+	    M, C, boat = state
+	    new_state = ()
+              
+	    if action == 'MM':
+	       	new_state = (M - 2, C, not boat) if boat else (M + 2, C, not boat)
+	    elif action == 'CC'
+	        new_state = (M, C - 2, not boat) if boat else (M, C + 2 not boat)
+	    elif action == 'C'
+	        new_state = (M, C - 1, not boat) if boat else (M, C + 1 not boat)
+	    elif action == 'M':
+	       	new_state = (M - 1, C, not boat) if boat else (M + 1, C, not boat)
+	    elif action == 'M':
+	        new_state = (M - 1, C - 1, not boat) if boat else (M + 1, C + 1, not boat)
+                
+        return new_state
+                        
+    def goal_test(self, state):
+	    return state == self.goal
+		    
 if __name__ == '__main__':
     mc = MissCannibals(3,3)
     print(mc.actions((3, 2, True))) # Test your code as you develop! This should return  ['CC', 'C', 'M']
