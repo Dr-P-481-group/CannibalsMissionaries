@@ -43,9 +43,9 @@ class MissCannibals(Problem):
               
 	    if action == 'MM':
 	       	new_state = (M - 2, C, not boat) if boat else (M + 2, C, not boat)
-	    elif action == 'CC'
+	    elif action == 'CC':
 	        new_state = (M, C - 2, not boat) if boat else (M, C + 2 not boat)
-	    elif action == 'C'
+	    elif action == 'C':
 	        new_state = (M, C - 1, not boat) if boat else (M, C + 1 not boat)
 	    elif action == 'M':
 	       	new_state = (M - 1, C, not boat) if boat else (M + 1, C, not boat)
